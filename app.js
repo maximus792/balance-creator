@@ -89,7 +89,7 @@ function main() {
     calcSum("ANC") +
       calcSum("AC") -
       (calcSum("PN") + calcSum("PNC") + calcSum("PC"))
-  )}`;
+  )}€`;
   calcSum("PN");
 
   document.querySelectorAll(".total").forEach((v) => {

@@ -17,19 +17,27 @@
     <nav class="navbar navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"> Generador de Balanços </a>
-        <a class="navbar-text copy">&copy;All Right Reserved </a>
+        <a class="navbar-text copy">&copy;All Rights Reserved </a>
       </div>
     </nav>
 
     <div class="container-fluid main-container">
-        <h1 style="margin: 2rem">ENUNCIAT</h1>
-<div class="enun"></div>
-<div class="button-group">
-    <button class="btn btn-primary showsol" onclick="toggleSol()">Mostrar Solució</button>
-<button class="btn btn-secondary" style="background: #138f06;" onclick="generate()">Generar Balanç</button>
-</div>
-        </div>
-    <div class="container-fluid main-container sol" style="display: none;">
+      <h1 style="margin: 2rem">ENUNCIAT</h1>
+      <div class="enun"></div>
+      <div class="button-group">
+        <button class="btn btn-primary showsol" onclick="toggleSol()">
+          Mostrar Solució
+        </button>
+        <button
+          class="btn btn-secondary"
+          style="background: #138f06"
+          onclick="generate()"
+        >
+          Generar Balanç
+        </button>
+      </div>
+    </div>
+    <div class="container-fluid main-container sol" style="display: none">
       <h1 style="margin: 2rem">Balanç de Situació</h1>
       <div class="balance-container">
         <div class="left-side block">
@@ -39,17 +47,18 @@
           >
             Actiu
           </h2>
-          <h3 class="group-header">Actiu No Corrent <span class="money-span span-ANC"></span></h3>
+          <h3 class="group-header">
+            Actiu No Corrent <span class="money-span span-ANC"></span>
+          </h3>
           <h4>Immobilitzat Intangible</h4>
-          <div class="item-group imIn">
-          </div>
+          <div class="item-group imIn"></div>
           <h4>Immobilitzat Material</h4>
-          <div class="item-group imMa">
-          </div>
-          <h4>Inversions Financeres</h4>
-          <div class="item-group inFi">
-        </div>
-          <h3 class="group-header">Actiu Corrent <span class="money-span span-AC"></span></h3>
+          <div class="item-group imMa"></div>
+          <h4>Inversions Financeres a ll/t</h4>
+          <div class="item-group inFi"></div>
+          <h3 class="group-header">
+            Actiu Corrent <span class="money-span span-AC"></span>
+          </h3>
           <h4>Existencies</h4>
           <div class="item-group Ex"></div>
           <h4>Realitzables</h4>
@@ -66,13 +75,19 @@
           >
             PN i Passiu
           </h2>
-          <h3 class="group-header">Patrimoni Net <span class="money-span span-PN"></span></h3>
+          <h3 class="group-header">
+            Patrimoni Net <span class="money-span span-PN"></span>
+          </h3>
           <div class="item-group PN"></div>
-          <h3 class="group-header">Passiu No Corrent <span class="money-span span-PNC"></span></h3>
+          <h3 class="group-header">
+            Passiu No Corrent <span class="money-span span-PNC"></span>
+          </h3>
           <div class="item-group PNC"></div>
-          <h3 class="group-header">Passiu Corrent <span class="money-span span-PC"></span></h3>
+          <h3 class="group-header">
+            Passiu Corrent <span class="money-span span-PC"></span>
+          </h3>
           <div class="item-group PC"></div>
-        <p class="total"></p>
+          <p class="total"></p>
         </div>
       </div>
     </div>
