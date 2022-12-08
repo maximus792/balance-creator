@@ -11,7 +11,7 @@ const values = {
   inFi: [
     "Inversions Financeres a llarg termini",
     "Deutors a llarg termini",
-    "Efectes a cobrar a llarg termini",
+    "Efectes comercials a cobrar a llarg termini",
   ],
   Ex: ["Mercaderies", "Matèries primeres", "Productes acabats"],
   Re: [
@@ -21,7 +21,7 @@ const values = {
 
     "Inversions Financeres a curt termini",
     "Deutors a curt termini",
-    "Efectes a cobrar a curt termini",
+    "Efectes comercials a cobrar a curt termini",
   ],
   Di: ["Bancs", "Caixa"],
   //right
@@ -29,7 +29,7 @@ const values = {
   PNC: [
     "Deutes a llarg termini amb entitats de crèdit",
     "Proveïdors d'immobilitzat a llarg termini",
-    "Efectes a pagar a llarg termini",
+    "Efectes comercials a pagar a llarg termini",
   ],
   PC: [
     "Proveïdors",
@@ -38,7 +38,7 @@ const values = {
     "Deutes a curt termini amb entitats de crèdit",
     "Proveïdors d'immobilitzat a curt termini",
     "Organismes de la Seguretat Social creditors",
-    "Efectes a pagar a curt termini",
+    "Efectes comercials a pagar a curt termini",
   ],
 };
 

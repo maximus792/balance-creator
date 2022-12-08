@@ -35,7 +35,11 @@ function selectValues(complete) {
 var selected = {};
 var multiplicator;
 function main() {
-    document.querySelector(".enun").innerHTML=""
+  document.querySelector(".enun").innerHTML = "";
+  document.querySelectorAll(`h4`).forEach((h4) => {
+    if (h4.innerHTML.indexOf("(") > 0)
+      h4.innerHTML = h4.innerHTML.substring(0, h4.innerHTML.indexOf("("));
+  });
   selected = {};
   multiplicator = Math.floor(Math.random() * 5) + 1;
   multiplicator = multiplicator === 1 ? 2 : multiplicator;
@@ -80,7 +84,7 @@ function main() {
       money = 0;
       document.querySelector(
         `.${key}`
-      ).innerHTML += `<div class="item"><p>Resultat de l'exercici</p><p class="money result">${money}€</p></div>
+      ).innerHTML += `<div class="item"><p><b>Resultat de l'exercici</b></p><p class="money result">${money}€</p></div>
         `;
     }
   }
@@ -107,12 +111,39 @@ function calcSum(key) {
   else checkArray = [key];
 
   checkArray.forEach((val) => {
+    var firstresult = 0;
     document.querySelectorAll(`.${val} .money`).forEach((element) => {
       var price = element.innerHTML;
-      console.log(price);
+      // console.log(price);
       price = price.replaceAll(".", "");
       price = price.replaceAll("{", "");
+      firstresult += parseInt(price);
       result += parseInt(price);
+    });
+    document.querySelectorAll(`h4`).forEach((h4) => {
+      var title = h4.innerHTML;
+
+      if (val === "imIn" || val === "imMa" || val === "inFi") {
+        if (
+          h4.innerHTML
+            .toLocaleLowerCase()
+            .includes(val.substring(2, 4).toLowerCase()) &&
+          h4.innerHTML
+            .toLocaleLowerCase()
+            .includes(val.substring(0, 2).toLowerCase()) &&
+          !h4.innerHTML.includes("€")
+        ) {
+          console.log(`val: ${val}; `);
+          h4.innerHTML = `${title} (${addPoints(firstresult)}€)`;
+        }
+      } else if (
+        h4.innerHTML
+          .toLocaleLowerCase()
+          .includes(val.substring(0, 2).toLowerCase()) &&
+        !h4.innerHTML.includes("€")
+      ) {
+        h4.innerHTML = `${title} (${addPoints(firstresult)}€)`;
+      }
     });
   });
   s.innerHTML = `(${addPoints(result)}€)`;
@@ -137,7 +168,7 @@ function toggleSol() {
   }
 }
 
-function generate(){
-    var a = confirm("Generar nou balanç?")
-    if(a) main()
+function generate() {
+  var a = confirm("Generar nou balanç?");
+  if (a) main();
 }
