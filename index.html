@@ -4,100 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creador de Balanços</title>
+    <title>Document</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="main()">
+  <body>
     <nav class="navbar navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"> Generador de Balanços </a>
-        <a class="navbar-text copy">&copy;All Rights Reserved </a>
+        <div>
+          <a style="margin-right: 20px" class="navbar-text copy">Balanç</a>
+          <a class="navbar-text copy">Compte de pèrdues i guanys </a>
+        </div>
       </div>
     </nav>
 
-    <div class="container-fluid main-container">
-      <h1 style="margin: 2rem">ENUNCIAT</h1>
-      <div class="enun"></div>
-      <div class="button-group">
-        <button class="btn btn-primary showsol" onclick="toggleSol()">
-          Mostrar Solució
-        </button>
-        <button
-          class="btn btn-secondary"
-          style="background: #138f06"
-          onclick="generate()"
-        >
-          Generar Balanç
-        </button>
-      </div>
+    <h1
+      style="
+        margin: 2rem;
+        text-align: center;
+        font-family: 'Oswald', sans-serif;
+      "
+    >
+      Escull l'exercici per a practicar
+    </h1>
+    <div class="boxes">
+      <a class="box" href="balance.html">
+        <h2>Balanç de Situació</h2>
+        <p class="mt-5 p-2">
+          El balanç de situació ens
+          <b
+            >indica la situació financera en què es troba l'empresa en un moment
+            determinat</b
+          >, per la qual cosa és vital per poder fer una planificació exhaustiva
+          en qualsevol pla de negoci.
+        </p>
+      </a>
+      <a class="box" href="compte.html">
+        <h2>Compte de pèrdues i guanys</h2>
+        <p class="mt-5 p-2">
+          Al compte de pèrdues i guanys es calcula la
+          <b>diferència entre les despeses i els ingressos produïts</b> durant
+          l'exercici comptable.
+        </p>
+      </a>
     </div>
-    <div class="container-fluid main-container sol" style="display: none">
-      <h1 style="margin: 2rem">Balanç de Situació</h1>
-      <div class="balance-container">
-        <div class="left-side block">
-          <h2
-            class="group-header"
-            style="font-weight: bold; margin-bottom: 1rem"
-          >
-            Actiu
-          </h2>
-          <h3 class="group-header">
-            Actiu No Corrent <span class="money-span span-ANC"></span>
-          </h3>
-          <h4>Immobilitzat Intangible</h4>
-          <div class="item-group imIn"></div>
-          <h4>Immobilitzat Material</h4>
-          <div class="item-group imMa"></div>
-          <h4>Inversions Financeres a ll/t</h4>
-          <div class="item-group inFi"></div>
-          <h3 class="group-header">
-            Actiu Corrent <span class="money-span span-AC"></span>
-          </h3>
-          <h4>Existencies</h4>
-          <div class="item-group Ex"></div>
-          <h4>Realitzables</h4>
-          <div class="item-group Re"></div>
-          <h4>Disponible</h4>
-          <div class="item-group Di"></div>
-          <p class="total"></p>
-        </div>
-        <div class="v-divider"></div>
-        <div class="right-side block">
-          <h2
-            class="group-header"
-            style="font-weight: bold; margin-bottom: 1rem"
-          >
-            PN i Passiu
-          </h2>
-          <h3 class="group-header">
-            Patrimoni Net <span class="money-span span-PN"></span>
-          </h3>
-          <div class="item-group PN"></div>
-          <h3 class="group-header">
-            Passiu No Corrent <span class="money-span span-PNC"></span>
-          </h3>
-          <div class="item-group PNC"></div>
-          <h3 class="group-header">
-            Passiu Corrent <span class="money-span span-PC"></span>
-          </h3>
-          <div class="item-group PC"></div>
-          <p class="total"></p>
-        </div>
-      </div>
-    </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="values.js"></script>
-    <script src="app.js"></script>
   </body>
 </html>

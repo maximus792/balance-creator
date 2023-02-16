@@ -7,13 +7,14 @@ const values = {
     "Construccions (per a l'activitat productiva)",
     "Terrenys i béns naturals",
     "Maquinària",
+    "Edificis"
   ],
   inFi: [
     "Inversions Financeres a llarg termini",
     "Deutors a llarg termini",
     "Efectes comercials a cobrar a llarg termini",
   ],
-  Ex: ["Mercaderies", "Matèries primeres", "Productes acabats"],
+  Ex: ["Mercaderies", "Matèries primeres", "Productes acabats", "Existències"],
   Re: [
     "Clients",
     "Organismes Seguretat Social deutors",
@@ -23,7 +24,7 @@ const values = {
     "Deutors a curt termini",
     "Efectes comercials a cobrar a curt termini",
   ],
-  Di: ["Bancs", "Caixa"],
+  Di: ["Bancs", "Caixa","Tresoreria"],
   //right
   PN: ["Capital Social", "Reserves"],
   PNC: [
@@ -47,10 +48,7 @@ const actiuCorrent = ["Ex", "Re", "Di"];
 
 /*
 
-Equips per a processos d'informació
-Elements de transport
-Construccions (per a l'activitat
-roductiva)
-Mobiliari
+
+
 
 */

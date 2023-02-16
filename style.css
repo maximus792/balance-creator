@@ -1,123 +1,150 @@
-html,body{
-    box-sizing: border-box;
+html,
+body {
+  box-sizing: border-box;
 }
-.navbar{
-    padding: 1rem;
-    background-color: #ebebeb;
+.navbar {
+  padding: 1rem;
+  background-color: #ebebeb;
 }
-h1,h2,h3,h4,h5,h6{
-    font-family: serif;
-}
-
-.main-container{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 2rem;
-    background: #ebebeb;
-    border-radius: 5px;
-    margin-bottom: 5rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: serif;
 }
 
-.balance-container{
-    padding: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: space-between;
-}
-.v-divider{
-    height: auto;
-    top: 0;
-    position: relative;
-    border: 1px solid rgb(77, 75, 75);
-}
-.right-side{
-    flex: 0.5;
-    margin-left: 1rem;
-}
-.left-side{
-    flex: 0.5;
-    margin-right: 1rem;
-
-}
-h1{
-    font-size: 2.5rem;
-}
-h2{
-    text-align: center;
-    margin: .5rem;
-    font-size: 1.9rem;
-}
-h3{
-    text-align: center;
-    margin: .5rem;
-    font-size: 1.7rem;
+.main-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+  background: #ebebeb;
+  border-radius: 5px;
+  margin-bottom: 5rem;
 }
 
-h4{
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.balance-container {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
+}
+.v-divider {
+  height: auto;
+  top: 0;
+  position: relative;
+  border: 1px solid rgb(77, 75, 75);
+}
+.right-side {
+  flex: 0.5;
+  margin-left: 1rem;
+}
+.left-side {
+  flex: 0.5;
+  margin-right: 1rem;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  text-align: center;
+  margin: 0.5rem;
+  font-size: 1.9rem;
+}
+h3 {
+  text-align: center;
+  margin: 0.5rem;
+  font-size: 1.7rem;
 }
 
-.item-group{
-    margin-bottom: 1rem;
-    
-    text-align: center;
-    border-bottom: 1px dashed #727272;
-}
-.group-header{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-.item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.item p{
-    margin: 0 .5rem 1rem .5rem;
-}
-.item p:last-child{
-color: red;
+h4 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.group-header .money-span{
-    text-decoration: none;
-    color: red;
+.item-group {
+  margin-bottom: 1rem;
+
+  text-align: center;
+  border-bottom: 1px dashed #727272;
 }
-.item-enun{
-    justify-content: flex-start!important;
-    align-items: center;
-    text-align: left;
-    width: 100%;
+.group-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-.item-enun::before{
-    content: "·";
-    transform: translate(0,-20%);
-    font-size: 2rem;
-    font-weight: bold;
-    
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item p {
+  margin: 0 0.5rem 1rem 0.5rem;
+}
+.item p:last-child {
+  color: red;
+}
+
+.group-header .money-span {
+  text-decoration: none;
+  color: red;
+}
+.item-enun {
+  justify-content: flex-start !important;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+}
+.item-enun::before {
+  content: "·";
+  transform: translate(0, -20%);
+  font-size: 2rem;
+  font-weight: bold;
 }
 /* .money2{
     color: #4d4c4c!important;
 } */
 
-.total{
-    color: blueviolet;
-    font-size: 2.2rem;
-   text-align: center;
-    justify-self: end;
-    margin: 0 auto;
-    margin-top: 4rem;
+.total {
+  color: blueviolet;
+  font-size: 2.2rem;
+  text-align: center;
+  justify-self: end;
+  margin: 0 auto;
+  margin-top: 4rem;
 }
 
-.button-group{
-    margin: 1rem;
-    align-self: flex-end;
+.button-group {
+  margin: 1rem;
+  align-self: flex-end;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+.box {
+  background: #d2d2d2;
+  width: 40%;
+  height: 50vh;
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
+  color: black;
+}
+.box:hover{
+    transform: scale(1.05);
+}
+.box h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
 }

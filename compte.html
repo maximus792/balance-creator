@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creador de Balanços</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="main()">
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> Generador de Balanços </a>
+        <a class="navbar-text copy">Compte de pèrdues i guanys </a>
+      </div>
+    </nav>
+
+    <div class="container-fluid main-container">
+      <h1 style="margin: 2rem">ENUNCIAT</h1>
+      <div class="enun"></div>
+      <div class="button-group">
+        <button class="btn btn-primary showsol" onclick="toggleSol()">
+          Mostrar Solució
+        </button>
+        <button
+          class="btn btn-secondary"
+          style="background: #138f06"
+          onclick="generate()"
+        >
+          Generar Compte de Resultats
+        </button>
+      </div>
+    </div>
+    <div class="container-fluid main-container sol" ><!--style="display: none"-->
+      <h1 style="margin: 2rem">Balanç de Situació</h1>
+      <div class="compte-container">
+        <h1>Ingressos d'explotació</h1>
+        <h2>Import net de la xifra de negocis</h2>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="values.js"></script>
+    <script src="compte.js"></script>
+  </body>
+</html>
