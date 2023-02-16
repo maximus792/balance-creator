@@ -13,7 +13,10 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="main()">
+  <body>
+    <style>
+      h2 {text-decoration:underline}
+    </style>
     <nav class="navbar navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"> Generador de Balanços </a>
@@ -38,10 +41,26 @@
       </div>
     </div>
     <div class="container-fluid main-container sol" ><!--style="display: none"-->
-      <h1 style="margin: 2rem">Balanç de Situació</h1>
-      <div class="compte-container">
-        <h1>Ingressos d'explotació</h1>
-        <h2>Import net de la xifra de negocis</h2>
+      <div>
+        <h1>Balanç de Situació</h1>
+        <div class="compte-container">
+          <h2>Ingressos d'explotació</h2>
+          <h3>Import net de la xifra de negocis</h3>
+          <div id="inxn"></div>
+          <h3>Variació de productes acabats i en curs</h3>
+          <div id="vpac"></div>
+          <h3>Altres ingressos d'explotació</h3>
+          <div id="aie"></div>
+          <h2>Despeses d'explotació</h2>
+          <h3>Proveiments</h3>
+          <div id="provs"></div>
+          <h3>Despeses de personal</h3>
+          <div id="ddp"></div>
+          <h3>Amortització de l'immobilitzat</h3>
+          <div id="adi"></div>
+          <h3>Altres despeses d'explotació</h3>
+          <div id="ade"></div>
+        </div>
       </div>
     </div>
 
