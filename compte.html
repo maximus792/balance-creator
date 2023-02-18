@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="generate()">
     <style>
       h2 {text-decoration:underline}
     </style>
@@ -40,26 +40,33 @@
         </button>
       </div>
     </div>
-    <div class="container-fluid main-container sol" ><!--style="display: none"-->
+    <div class="container-fluid main-container sol" style="display: none" ><!--style="display: none"-->
       <div>
         <h1>Balanç de Situació</h1>
         <div class="compte-container">
-          <h2>Ingressos d'explotació</h2>
-          <h3>Import net de la xifra de negocis</h3>
+          <h2>Ingressos d'explotació <span class="titleNumber" id="ie-n"></span></h2>
+          <h3>Import net de la xifra de negocis <span class="titleNumber" id="inxn-n"></span></h3>
           <div id="inxn"></div>
-          <h3>Variació de productes acabats i en curs</h3>
+          <h3>Variació de productes acabats i en curs <span class="titleNumber" id="vpac-n"></span></h3>
           <div id="vpac"></div>
-          <h3>Altres ingressos d'explotació</h3>
+          <h3>Altres ingressos d'explotació <span class="titleNumber" id="aie-n"></span></h3>
           <div id="aie"></div>
-          <h2>Despeses d'explotació</h2>
-          <h3>Proveiments</h3>
+
+          <h2>Despeses d'explotació <span class="titleNumber" id="de-n"></span></h2>
+          <h3>Proveiments <span class="titleNumber" id="provs-n"></span></h3>
           <div id="provs"></div>
-          <h3>Despeses de personal</h3>
+          <h3>Despeses de personal <span class="titleNumber" id="ddp-n"></span></h3>
           <div id="ddp"></div>
-          <h3>Amortització de l'immobilitzat</h3>
+          <h3>Amortització de l'immobilitzat <span class="titleNumber" id="adi-n"></span></h3>
           <div id="adi"></div>
-          <h3>Altres despeses d'explotació</h3>
+          <h3>Altres despeses d'explotació <span class="titleNumber" id="ade-n"></span></h3>
           <div id="ade"></div>
+          <h2>Resultat d'explotació <span id="res-ex-n" class="titleNumber"></span></h2>
+          <div id="res-ex"></div>
+          <h2>Resultat financer <span id="res-fin-n" class="titleNumber"></span></h2>
+          <h2>Bai  <span id="bai-n" class="titleNumber"></span></h2>
+          <div id="bai"></div>
+          <h2>Benefici net <span id="ben-n" class="titleNumber"></span></h2>
         </div>
       </div>
     </div>
