@@ -33,33 +33,38 @@ function generate() {
     ["Despeses financeres", random(0, 1000)],
     ["Impost sobre benefici", random(12, 52)],
   ];
-
+  var toShow = []
   if (!V1)
     compte[1][1] = compte[1][1]*-1;
   if (!V2)
     compte[2][1] = compte[2][1]*-1;
   //
   div.innerHTML = ``; //clear
-  div.innerHTML += `
-    <p><li>${compte[0][0]} : <span style='color: red'>${numberWithCommas(compte[0][1])}</li></span></p>
-    `;
+  toShow.push(`
+    <p class='compteEnun'><li>${compte[0][0]} : <span style='color: red'>${numberWithCommas(compte[0][1])}</span></li></p>
+    `);
   var showed=[compte[0]];
   for (let i = 1; i < 18; i++){
     if (random(0, 1)){
-       (div.innerHTML += `<p><li>${compte[i][0]} : <span style='color: red'>${numberWithCommas(Math.abs(parseInt(compte[i][1])))}</li></span></p>`);;
+       toShow.push(`<p class='compteEnun'><li>${compte[i][0]} : <span style='color: red'>${numberWithCommas(Math.abs(parseInt(compte[i][1])))}</span></li></p>`);
       showed.push(compte[i]);
     }
   }
   for (let i = 18; i < 20 ; i++){
     if (random(0, 1)){
-      (div.innerHTML += `<p><li>${compte[i][0]} : <span style='color: red'>${numberWithCommas(compte[i][1])}</li></span></p>`);
+        toShow.push(div.innerHTML += `<p class='compteEnun'><li>${compte[i][0]} : <span style='color: red'>${numberWithCommas(compte[i][1])}</span></li></p>`);
       showed.push(compte[i]);
     } 
   }
-  div.innerHTML += `<p><li>${compte[20][0]} : <span style='color: red'>${numberWithCommas(compte[20][1])} %</li></span></p>`;
+  toShow.push(`<p class='compteEnun'><li>${compte[20][0]} : <span style='color: red'>${numberWithCommas(compte[20][1])} %</span></li></p>`);
   showed.push(compte[20]);
-
+  
   ///////
+  toShow = toShow.sort((a, b) => 0.5 - Math.random());
+  toShow.forEach(element => {
+    div.innerHTML += element;
+  })
+
 
   ///////
 
@@ -85,43 +90,43 @@ function generate() {
   console.log(compte);
   showed.forEach(element => {
     if (compte.indexOf(element) == 0){
-      document.getElementById("inxn").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("inxn").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       inxn+=element[1];
     }
     else if ([1, 2].includes(compte.indexOf(element))){
-      document.getElementById("vpac").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("vpac").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       vpac+=element[1];
     }
     else if ([3, 4].includes(compte.indexOf(element))){
-      document.getElementById("aie").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("aie").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       aie+=element[1];
     }
     else if ([5].includes(compte.indexOf(element))){
-      document.getElementById("provs").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("provs").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       provs+=element[1];
     }
     else if ([6, 7].includes(compte.indexOf(element))){
-      document.getElementById("ddp").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("ddp").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       ddp+=element[1];
     }
     else if ([8].includes(compte.indexOf(element))){
-      document.getElementById("adi").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("adi").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       adi+=element[1];
     }
     else if ([9,10,11,12,13,14,15,16,17].includes(compte.indexOf(element))){
-      document.getElementById("ade").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("ade").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       ade+=element[1];
     }
     else if ([18].includes(compte.indexOf(element))){
-      document.getElementById("res-ex").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("res-ex").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       IngressosFinancers+=element[1];
     }
     else if ([19].includes(compte.indexOf(element))){
-      document.getElementById("res-ex").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</li></span></p>`;
+      document.getElementById("res-ex").innerHTML += `<p><li>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])}</span></li></p>`;
       DespesesFinanceres+=element[1];
     }
     else if ([20].includes(compte.indexOf(element))){
-      document.getElementById("bai").innerHTML += `<p><li id='bentax'>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])} % </li></span></p>`;
+      document.getElementById("bai").innerHTML += `<p><li id='bentax'>${element[0]} : <span style='color: red'>${numberWithCommas(element[1])} % </span></li></p>`;
     }
   });
   var IE = inxn+vpac+aie;
@@ -171,3 +176,6 @@ function toggleSol(){
     document.querySelector(".sol").style.display = "none";
   }
 }
+
+
+  
