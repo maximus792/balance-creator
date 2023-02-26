@@ -1,4 +1,9 @@
 function generate() {
+  var a = confirm("Generar nou balanç?");
+  if (a) main();
+}
+function main() {
+
   var div = document.querySelector(".enun");
   div.innerHTML = "";
   //var r = random(10, 100000) * 10;
@@ -146,11 +151,11 @@ function generate() {
   document.getElementById("bai-n").innerHTML = numberWithCommas((IE-DE) + (IngressosFinancers-DespesesFinanceres)); //baii + rf
   var BAI = (IE-DE) + (IngressosFinancers-DespesesFinanceres)
   if (BAI > 0){
-    document.getElementById("bentax").innerHTML += `-> ${ numberWithCommas(parseInt(compte[20][1]/100 * (BAI)))}`
+    document.getElementById("bentax").innerHTML += `&rarr; ${ numberWithCommas(parseInt(compte[20][1]/100 * (BAI)))}`
     document.getElementById("ben-n").innerHTML = numberWithCommas( BAI -  parseInt(compte[20][1]/100 * (BAI))); //baii + rf
   }
   else{
-    document.getElementById("bentax").innerHTML += `-> 0`
+    document.getElementById("bentax").innerHTML += `&rarr; 0`
     document.getElementById("ben-n").innerHTML = "0" //baii + rf
   }
 
