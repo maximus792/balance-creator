@@ -1,6 +1,3 @@
-var today = new Date();
-document.querySelector(".copy").innerHTML += today.getFullYear();
-
 const randomSort = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -34,6 +31,7 @@ function selectValues(complete) {
 
 var selected = {};
 var multiplicator;
+
 function main() {
   document.querySelector(".enun").innerHTML = "";
   document.querySelectorAll(`h4`).forEach((h4) => {
@@ -61,6 +59,7 @@ function main() {
   } while (selected["imIn"].length === 0 && selected["imMa"].length === 0);
 
   var enun = document.querySelector(".enun");
+  var divs = [];
 
   for (const [key, value] of Object.entries(selected)) {
     console.log(`.${key}`);
@@ -75,10 +74,10 @@ function main() {
       )}€</p></div>
         `;
 
-      enun.innerHTML += `<div class="item item-enun"><p>${val}</p><p class="money2">${addPoints(
+      divs.push(`<div class="item item-enun"><p>${val}</p><p class="money2">${addPoints(
         money
       )}€</p></div>
-            `;
+            `);
     });
     if (key === "PN") {
       money = 0;
@@ -88,6 +87,12 @@ function main() {
         `;
     }
   }
+
+  divs
+    .sort(() => (Math.random() > 0.5 ? 1 : -1))
+    .map((element) => {
+      enun.innerHTML += element;
+    });
 
   document.querySelector(".result").innerHTML = `${addPoints(
     calcSum("ANC") +
