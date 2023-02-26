@@ -1,5 +1,5 @@
 function generate() {
-  var a = confirm("Generar nou balanç?");
+  var a = confirm("Generar nou compte?");
   if (a) main();
 }
 function main() {
@@ -61,7 +61,7 @@ function main() {
       showed.push(compte[i]);
     } 
   }
-  toShow.push(`<p class='compteEnun'><li>${compte[20][0]} : <span style='color: red'>${numberWithCommas(compte[20][1])} %</span></li></p>`);
+  toShow.push(`<p class='compteEnun'><li>${compte[20][0]} : <span style='color: red'>${numberWithCommas(compte[20][1])}<a style="text-decoration:none; color:red;" href="./images/ep.jpeg">%</a></span></li></p>`);
   showed.push(compte[20]);
   
   ///////

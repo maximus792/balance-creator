@@ -15,12 +15,14 @@
   </head>
   <body onload="main()">
     <style>
-      h2 {text-decoration:underline}
+      h2 {
+        text-decoration: underline;
+      }
     </style>
     <nav class="navbar navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"> Generador de Balanços </a>
-        <a class="navbar-text copy">Compte de pèrdues i guanys </a>
+      <div class="container-fluid; width:100%">
+        <a class="navbar-brand" href="/index.html">Generador de Comptes</a>
+        <a class="navbar-text copy" href="balance.html">Balanç de Situació </a>
       </div>
     </nav>
 
@@ -36,37 +38,68 @@
           style="background: #138f06"
           onclick="generate()"
         >
-          Generar Compte de Resultats
+          Genera!
         </button>
       </div>
     </div>
-    <div class="container-fluid main-container sol" style="display: none" ><!--style="display: none"-->
+    <div class="container-fluid main-container sol" style="display: none">
+      <!--style="display: none"-->
       <div>
-        <h1>Balanç de Situació</h1>
+        <h1 style="margin: 20px 0">Balanç de Situació</h1>
         <div class="compte-container">
-          <h2>Ingressos d'explotació <span class="titleNumber" id="ie-n"></span></h2>
-          <h3>Import net de la xifra de negocis <span class="titleNumber" id="inxn-n"></span></h3>
+          <h2 style="margin: 15px 0; margin-top: 45px">
+            Ingressos d'explotació <span class="titleNumber" id="ie-n"></span>
+          </h2>
+          <h3>
+            Import net de la xifra de negocis
+            <span class="titleNumber" id="inxn-n"></span>
+          </h3>
           <div id="inxn"></div>
-          <h3>Variació de productes acabats i en curs <span class="titleNumber" id="vpac-n"></span></h3>
+          <h3>
+            Variació de productes acabats i en curs
+            <span class="titleNumber" id="vpac-n"></span>
+          </h3>
           <div id="vpac"></div>
-          <h3>Altres ingressos d'explotació <span class="titleNumber" id="aie-n"></span></h3>
+          <h3>
+            Altres ingressos d'explotació
+            <span class="titleNumber" id="aie-n"></span>
+          </h3>
           <div id="aie"></div>
 
-          <h2>Despeses d'explotació <span class="titleNumber" id="de-n"></span></h2>
+          <h2 style="margin: 15px 0; margin-top: 45px">
+            Despeses d'explotació <span class="titleNumber" id="de-n"></span>
+          </h2>
           <h3>Proveïments <span class="titleNumber" id="provs-n"></span></h3>
           <div id="provs"></div>
-          <h3>Despeses de personal <span class="titleNumber" id="ddp-n"></span></h3>
+          <h3>
+            Despeses de personal <span class="titleNumber" id="ddp-n"></span>
+          </h3>
           <div id="ddp"></div>
-          <h3>Amortització de l'immobilitzat <span class="titleNumber" id="adi-n"></span></h3>
+          <h3>
+            Amortització de l'immobilitzat
+            <span class="titleNumber" id="adi-n"></span>
+          </h3>
           <div id="adi"></div>
-          <h3>Altres despeses d'explotació <span class="titleNumber" id="ade-n"></span></h3>
+          <h3>
+            Altres despeses d'explotació
+            <span class="titleNumber" id="ade-n"></span>
+          </h3>
           <div id="ade"></div>
-          <h2>Resultat d'explotació - BAII <span id="res-ex-n" class="titleNumber"></span></h2>
+          <h2 style="margin: 15px 0; margin-top: 45px">
+            Resultat d'explotació - BAII
+            <span id="res-ex-n" class="titleNumber"></span>
+          </h2>
           <div id="res-ex"></div>
-          <h2>Resultat financer <span id="res-fin-n" class="titleNumber"></span></h2>
-          <h2>BAI  <span id="bai-n" class="titleNumber"></span></h2>
+          <h2 style="margin: 15px 0; margin-top: 45px">
+            Resultat financer <span id="res-fin-n" class="titleNumber"></span>
+          </h2>
+          <h2 style="margin: 15px 0; margin-top: 45px">
+            BAI <span id="bai-n" class="titleNumber"></span>
+          </h2>
           <div id="bai"></div>
-          <h2>Benefici Net <span id="ben-n" class="titleNumber"></span></h2>
+          <h2 style="margin: 15px 0; margin-top: 45px">
+            Benefici Net <span id="ben-n" class="titleNumber"></span>
+          </h2>
         </div>
       </div>
     </div>
