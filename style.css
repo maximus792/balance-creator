@@ -135,6 +135,7 @@ h4 {
 }
 .item-enun {
   justify-content: flex-start !important;
+  flex-direction: row;
   align-items: center;
   text-align: left;
   width: 100%;
@@ -166,18 +167,21 @@ h4 {
 .boxes {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 1rem;
 }
 .box {
   background: #d2d2d2;
   width: 35%;
-  height: 50vh;
+  min-width: 286px;
+  height: 35vh;
   border-radius: 10px;
   padding: 1rem;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: black;
+  margin: .5rem;
 }
 
 .box:hover {

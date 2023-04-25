@@ -7,7 +7,7 @@ const values = {
     "Construccions (per a l'activitat productiva)",
     "Terrenys i béns naturals",
     "Maquinària",
-    "Edificis"
+    "Edificis",
   ],
   inFi: [
     "Inversions Financeres a llarg termini",
@@ -24,7 +24,7 @@ const values = {
     "Deutors a curt termini",
     "Efectes comercials a cobrar a curt termini",
   ],
-  Di: ["Bancs", "Caixa","Tresoreria"],
+  Di: ["Bancs", "Caixa", "Tresoreria"],
   //right
   PN: ["Capital Social", "Reserves"],
   PNC: [
@@ -45,6 +45,14 @@ const values = {
 
 const actiunoCorrent = ["imIn", "imMa", "inFi"];
 const actiuCorrent = ["Ex", "Re", "Di"];
+
+const compt = [
+  "Ingressos d'explotació",
+  "Despeses d'explotació",
+  "Ingressos financers",
+  "Despeses financeres",
+  "Impost sobre benefici",
+];
 
 /*
 

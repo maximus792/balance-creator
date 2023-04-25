@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creador de Balanços</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="main()">
+    <style>
+      h3 {
+        text-align: center;
+      }
+    </style>
+    <nav class="navbar navbar-light">
+      <div class="container-fluid; width:100%">
+        <a class="navbar-brand" href="/balance-creator/index.html"
+          >Generador de Balanços</a
+        >
+        <a class="navbar-text" href="/balance-creator/compte.html"
+          >Compte de pèrdues i guanys</a
+        >
+      </div>
+    </nav>
+
+    <div class="container-fluid main-container">
+      <h1 style="margin: 2rem">ENUNCIAT</h1>
+      <div class="enun"></div>
+      <div class="button-group">
+        <button class="btn btn-primary showsol" onclick="toggleSol()">
+          Mostrar Solució
+        </button>
+        <button
+          class="btn btn-secondary"
+          style="background: #138f06"
+          onclick="generate()"
+        >
+          Generar Balanç
+        </button>
+      </div>
+    </div>
+
+    <div class="solution">
+      <div class="container-fluid main-container sol" style="display: none">
+        <h1 style="margin: 2rem">Balanç de Situació</h1>
+        <div class="balance-container">
+          <div class="left-side block">
+            <h2
+              class="group-header"
+              style="font-weight: bold; margin-bottom: 1rem; text-align: center"
+            >
+              Actiu
+            </h2>
+            <h3 class="group-header">
+              Actiu No Corrent <span class="money-span span-ANC"></span>
+            </h3>
+            <h4>Immobilitzat Intangible</h4>
+            <div class="item-group imIn"></div>
+            <h4>Immobilitzat Material</h4>
+            <div class="item-group imMa"></div>
+            <h4>Inversions Financeres a ll/t</h4>
+            <div class="item-group inFi"></div>
+            <h3 class="group-header">
+              Actiu Corrent <span class="money-span span-AC"></span>
+            </h3>
+            <h4>Existencies</h4>
+            <div class="item-group Ex"></div>
+            <h4>Realitzables</h4>
+            <div class="item-group Re"></div>
+            <h4>Disponible</h4>
+            <div class="item-group Di"></div>
+            <p class="total"></p>
+          </div>
+          <div class="v-divider"></div>
+          <div class="right-side block">
+            <h2
+              class="group-header"
+              style="font-weight: bold; margin-bottom: 1rem; text-align: center"
+            >
+              PN i Passiu
+            </h2>
+            <h3 class="group-header">
+              Patrimoni Net <span class="money-span span-PN"></span>
+            </h3>
+            <div class="item-group PN"></div>
+            <h3 class="group-header">
+              Passiu No Corrent <span class="money-span span-PNC"></span>
+            </h3>
+            <div class="item-group PNC"></div>
+            <h3 class="group-header">
+              Passiu Corrent <span class="money-span span-PC"></span>
+            </h3>
+            <div class="item-group PC"></div>
+            <p class="total"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid main-container sol2" style="display: none">
+        <!--style="display: none"-->
+        <div>
+          <h1 style="margin: 20px 0">Compte de pèrdues i guanys</h1>
+          <div class="compte-container">
+            <h2 style="margin: 15px 0; margin-top: 45px">
+              Ingressos d'explotació <span class="titleNumber" id="ie-n"></span>
+            </h2>
+            <!--  <h3>
+              Import net de la xifra de negocis
+              <span class="titleNumber" id="inxn-n"></span>
+            </h3>
+            <div id="inxn"></div>
+            <h3>
+              Variació de productes acabats i en curs
+              <span class="titleNumber" id="vpac-n"></span>
+            </h3>
+            <div id="vpac"></div>
+            <h3>
+              Altres ingressos d'explotació
+              <span class="titleNumber" id="aie-n"></span>
+            </h3>
+            <div id="aie"></div>
+ -->
+            <h2 style="margin: 15px 0; margin-top: 45px">
+              Despeses d'explotació <span class="titleNumber" id="de-n"></span>
+            </h2>
+            <!-- <h3>Proveïments <span class="titleNumber" id="provs-n"></span></h3>
+            <div id="provs"></div>
+            <h3>
+              Despeses de personal <span class="titleNumber" id="ddp-n"></span>
+            </h3>
+            <div id="ddp"></div>
+            <h3>
+              Amortització de l'immobilitzat
+              <span class="titleNumber" id="adi-n"></span>
+            </h3>
+            <div id="adi"></div>
+            <h3>
+              Altres despeses d'explotació
+              <span class="titleNumber" id="ade-n"></span>
+            </h3>
+            <div id="ade"></div> -->
+            <h2 style="margin: 15px 0; margin-top: 45px">
+              Resultat d'explotació - BAII
+              <span id="res-ex-n" class="titleNumber"></span>
+            </h2>
+            <div id="res-ex"></div>
+            <h2 style="margin: 15px 0; margin-top: 45px">
+              Resultat financer <span id="res-fin-n" class="titleNumber"></span>
+            </h2>
+            <h2 style="margin: 15px 0; margin-top: 45px">
+              BAI <span id="bai-n" class="titleNumber"></span>
+            </h2>
+            <div id="bai"></div>
+            <h2 style="margin: 15px 0; margin-top: 45px">
+              Benefici Net <span id="ben-n" class="titleNumber"></span>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid main-container sol3" style="display: none">
+        <h1 style="margin: 2rem 0; text-decoration: underline;">RATIOS</h1>
+
+        <h2 style="margin-top: 2rem;">DISPONIBILITAT</h2>
+        <p class="disponibilitat"></p>
+        <p class="disponibilitat-2"></p>
+        <br />
+        <h2 style="margin-top: 2rem;">Tresoreria</h2>
+        <p class="tresoreria"></p>
+        <p class="tresoreria-2"></p>
+
+        <h2 style="margin-top: 2rem;">Liquiditat</h2>
+        <p class="liquiditat"></p>
+        <p class="liquiditat-2"></p>
+
+        <h2 style="margin-top: 2rem;">Solvència</h2>
+        <p class="solvencia"></p>
+        <p class="solvencia-2"></p>
+
+        <h2 style="margin-top: 2rem;">Endeutament</h2>
+        <p class="endeutament"></p>
+        <p class="endeutament-2"></p>
+
+<div style="width: 90%; border: 2px dashed #6e6e6e; margin: 3rem 0;"></div>
+        <h2 style="margin-top: 2rem;">Rendibilitat Econòmica</h2>
+        <p class="Rendibilitat-economica"></p>
+        <p class="Rendibilitat-economica-2"></p>
+
+        <h2 style="margin-top: 2rem;">Rendibilitat Financera</h2>
+        <p class="Rendibilitat-Financera"></p>
+        <p class="Rendibilitat-Financera-2"></p>
+
+        <h2 style="margin-top: 2rem;">Cost de Finançament Aliè</h2>
+        <p class="costFinAlie"></p>
+        <p class="costFinAlie-2"></p>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"></script>
+
+    <script src="values.js"></script>
+    <script src="all.js"></script>
+  </body>
+</html>
