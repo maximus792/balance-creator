@@ -33,7 +33,7 @@ var selected = {};
 var multiplicator;
 
 function main() {
-  toggleSol();
+ /*  toggleSol(); */
   V1 = random(0, 1);
   V2 = random(0, 1);
 
