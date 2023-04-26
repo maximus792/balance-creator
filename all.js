@@ -9,7 +9,7 @@ const randomSort = (array) => {
 };
 function selectValues(complete) {
   console.log("element");
-  console.log(values);
+ /*  console.log(values); */
   var changed = "";
   for (const [key, value] of Object.entries(values)) {
     changed = randomSort(value);
