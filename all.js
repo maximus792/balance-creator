@@ -212,9 +212,9 @@ function main() {
   var D = (Di / calcSum("PC")).toFixed(2);
   document.querySelector(
     ".disponibilitat"
-  ).innerHTML = `\\[ D=\\frac{Disponible}{Passiu Corrent}= \\frac{${addPoints(
+  ).innerHTML = `$$ {D=\\frac{Disponible}{Passiu Corrent}= \\frac{${addPoints(
     Di
-  )}}{${addPoints(calcSum("PC"))}} = ${D} \\]`;
+  )}}{${addPoints(calcSum("PC"))}} = ${D}}$$`;
   console.log(D);
   if (parseInt(D) <= 0.3)
     document.querySelector(
@@ -238,9 +238,9 @@ function main() {
   var Tr = ((Re + Di) / calcSum("PC")).toFixed(2);
   document.querySelector(
     ".tresoreria"
-  ).innerHTML = `\\[ T=\\frac{Disponible + Realitzable}{Passiu Corrent}= \\frac{${addPoints(
+  ).innerHTML = `$$ {T=\\frac{Disponible + Realitzable}{Passiu Corrent}= \\frac{${addPoints(
     Di
-  )}+${addPoints(Re)}}{${addPoints(calcSum("PC"))}} = ${Tr} \\]`;
+  )}+${addPoints(Re)}}{${addPoints(calcSum("PC"))}} = ${Tr}}$$`;
   console.log(Tr);
   if (parseFloat(Tr) <= 0.8)
     document.querySelector(
@@ -264,9 +264,9 @@ function main() {
   var Li = (calcSum("AC") / calcSum("PC")).toFixed(2);
   document.querySelector(
     ".liquiditat"
-  ).innerHTML = `\\[ L=\\frac{Actiu Corrent}{Passiu Corrent}= \\frac{${addPoints(
+  ).innerHTML = `$$ {L=\\frac{Actiu Corrent}{Passiu Corrent}= \\frac{${addPoints(
     Di
-  )}+${addPoints(L)}}{${addPoints(calcSum("PC"))}} = ${Li} \\]`;
+  )}+${addPoints(L)}}{${addPoints(calcSum("PC"))}} = ${Li} } $$`;
   console.log(Li);
   if (parseFloat(Li) <= 1.5)
     document.querySelector(
@@ -289,11 +289,11 @@ function main() {
   ).toFixed(2);
   document.querySelector(
     ".solvencia"
-  ).innerHTML = `\\[ S=\\frac{Actiu\\;(Corrent + No \\; Corrent)}{Passiu\\;(Corrent + No \\; Corrent)}= \\frac{${addPoints(
+  ).innerHTML = `$$ {S=\\frac{Actiu\\;(Corrent + No \\; Corrent)}{Passiu\\;(Corrent + No \\; Corrent)}= \\frac{${addPoints(
     calcSum("ANC")
   )}+${addPoints(calcSum("AC"))}}{${addPoints(calcSum("PC"))}+${addPoints(
     calcSum("PNC")
-  )}} = ${So} \\]`;
+  )}} = ${So} } $$`;
   console.log(So);
   if (parseFloat(So) <= 1)
     document.querySelector(
@@ -313,9 +313,9 @@ function main() {
   var En = (calcSum("PC") / (calcSum("PNC") + calcSum("PC"))).toFixed(2);
   document.querySelector(
     ".endeutament"
-  ).innerHTML = `\\[  En=\\frac{Passiu \\; Corrent}{Passiu}= \\frac{${addPoints(
+  ).innerHTML = `$$ { En=\\frac{Passiu \\; Corrent}{Passiu}= \\frac{${addPoints(
     calcSum("PC")
-  )}}{${addPoints(calcSum("PC"))}+${addPoints(calcSum("PNC"))}} = ${En} \\]`;
+  )}}{${addPoints(calcSum("PC"))}+${addPoints(calcSum("PNC"))}} = ${En} } $$`;
   console.log(En);
   if (parseFloat(En) <= 0.5)
     document.querySelector(
@@ -331,11 +331,11 @@ function main() {
   var RenEc = (BAII / (calcSum("AC") + calcSum("ANC"))).toFixed(2);
   document.querySelector(
     ".Rendibilitat-economica"
-  ).innerHTML = `\\[  Re = \\frac{BAII}{Actiu} = \\frac{${addPoints(
+  ).innerHTML = `$$ { Re = \\frac{BAII}{Actiu} = \\frac{${addPoints(
     BAII
   )}}{${addPoints(calcSum("AC"))} + ${addPoints(
     calcSum("ANC")
-  )}} = ${RenEc} \\]`;
+  )}} = ${RenEc} } $$`;
   console.log(RenEc);
   document.querySelector(
     ".Rendibilitat-economica-2"
@@ -347,9 +347,9 @@ function main() {
   var RenFi = (parseInt(BN.replaceAll(".", "")) / calcSum("PN")).toFixed(2);
   document.querySelector(
     ".Rendibilitat-Financera"
-  ).innerHTML = `\\[  RF = \\frac{Benefici \\; Net}{Patrimoni \\; Net} = \\frac{${addPoints(
+  ).innerHTML = `$$ { RF = \\frac{Benefici \\; Net}{Patrimoni \\; Net} = \\frac{${addPoints(
     BN
-  )}}{${addPoints(calcSum("PN"))} } = ${RenFi} \\]`;
+  )}}{${addPoints(calcSum("PN"))} } = ${RenFi} } $$`;
   console.log(RenFi);
   document.querySelector(
     ".Rendibilitat-Financera-2"
@@ -362,11 +362,11 @@ function main() {
   console.log(CoFiAlie);
   document.querySelector(
     ".costFinAlie"
-  ).innerHTML = `\\[  RF = \\frac{Despeses \\; Financeres}{Passiu} = \\frac{${addPoints(
+  ).innerHTML = `$$ { RF = \\frac{Despeses \\; Financeres}{Passiu} = \\frac{${addPoints(
     parseInt(document.querySelector(".desp").innerHTML.replaceAll(".",""))
   )}}{${addPoints(calcSum("PC"))} + ${addPoints(
     calcSum("PNC")
-  )}} = ${CoFiAlie} \\]`;
+  )}} = ${CoFiAlie} } $$`;
   if (RenEc >= CoFiAlie)
     document.querySelector(
       ".costFinAlie-2"
