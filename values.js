@@ -12,9 +12,10 @@ const values = {
   inFi: [
     "Inversions Financeres a llarg termini",
     "Deutors a llarg termini",
-    "Efectes comercials a cobrar a llarg termini",
+    "Clients, Efectes comercials a cobrar a llarg termini",
+
   ],
-  Ex: ["Mercaderies", "Matèries primeres", "Productes acabats", "Existències"],
+  Ex: ["Mercaderies", "Matèries primeres", "Productes acabats"],
   Re: [
     "Clients",
     "Organismes Seguretat Social deutors",
@@ -22,7 +23,7 @@ const values = {
 
     "Inversions Financeres a curt termini",
     "Deutors a curt termini",
-    "Efectes comercials a cobrar a curt termini",
+    "Clients, Efectes comercials a cobrar a curt termini",
   ],
   Di: ["Bancs", "Caixa", "Tresoreria"],
   //right

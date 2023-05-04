@@ -40,7 +40,7 @@ h6 {
     transform: scale(0.8);
   }
   .main-container {
- /*    width: 100% !important; */
+    /*    width: 100% !important; */
     justify-content: flex-start !important;
   }
 
@@ -181,7 +181,7 @@ h4 {
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: black;
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .box:hover {
@@ -192,8 +192,8 @@ h4 {
   font-size: 27px;
 }
 @media (max-width: 650px) {
-  .box p{
-    font-size: .6rem;
+  .box p {
+    font-size: 0.6rem;
   }
   .box h2 {
     font-size: 1.3rem;
@@ -202,4 +202,31 @@ h4 {
 
 .titleNumber {
   color: green;
+}
+
+.equation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  font-weight: bold;
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+.equation .frac {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+.equation .frac span {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+ 
+  
+}
+.equation .frac span:first-child {
+  border-bottom: 3px solid black;
 }
