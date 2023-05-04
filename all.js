@@ -331,7 +331,7 @@ function main() {
   var RenEc = (BAII / (calcSum("AC") + calcSum("ANC"))).toFixed(2);
   document.querySelector(
     ".Rendibilitat-economica"
-  ).innerHTML =`  Re = <div class="frac"><span>BAII</span><span>Actiu</span> </div> <div class="frac"><span>${addPoints(
+  ).innerHTML =`  Re = <div class="frac"><span>BAII</span><span>Actiu</span> </div> =<div class="frac"><span>${addPoints(
     BAII
   )}</span><span>${addPoints(calcSum("AC"))} + ${addPoints(
     calcSum("ANC")
