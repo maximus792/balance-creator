@@ -216,11 +216,11 @@ function main() {
     Di
   )}</span><span>${addPoints(calcSum("PC"))}</span></div> = ${D}`;
   console.log(D);
-  if (parseInt(D) <= 0.3)
+  if (parseFloat(D) <= 0.3)
     document.querySelector(
       ".disponibilitat-2"
     ).innerHTML = `Probemes de solvència a curt termini, ja que <b>${D}</b> No es troba en el ratio <b>[0.3 - 0.4]</b>`;
-  else if (parseInt(D) > 0.3 && parseInt(D) <= 0.4)
+  else if (parseFloat(D) > 0.3 && parseFloat(D) <= 0.4)
     document.querySelector(
       ".disponibilitat-2"
     ).innerHTML = `NO té problmes de solvència a curt termini, ja que <b>${D}</b> es troba en el ratio <b>[0.3 - 0.4]</b>`;
